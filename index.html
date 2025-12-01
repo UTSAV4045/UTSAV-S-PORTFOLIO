@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utsav Rai Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">Utsav Rai</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="https://www.linkedin.com/in/utsav-rai-812024217" target="_blank">LinkedIn</a></li>
+            <li><a href="https://github.com/UTSAV4045" target="_blank">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+        <img src="/utsav.jpg" alt="Utsav Photo" class="profile-photo">
+        <h1 class="title">Hi, I’m <span>Utsav Rai</span></h1>
+        <p class="subtitle">B.Tech CSE (AI/ML) | KIET Ghaziabad</p>
+
+        <p class="about">
+            Passionate developer and keen learner in AI, IoT, and full-stack development.
+            All my project details and code are shown below.
+        </p>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="skills">
+        <h2 class="section-title">Skills</h2>
+
+        <div class="skill-box">
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">C Language</div>
+            <div class="skill">Arduino</div>
+            <div class="skill">IoT Project Development</div>
+            <div class="skill">Git & GitHub</div>
+            <div class="skill">AI/ML Basics</div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="projects">
+        <h2 class="section-title">My Projects</h2>
+
+        <div class="project-card">
+            <h3>Arduino-Controlled Digital Dice Roller</h3>
+            <p>
+                A digital dice roller using Arduino that generates random numbers (1–6)
+                and displays them using LEDs.
+            </p>
+
+            <details>
+                <summary>📌 View Code</summary>
+                <pre>
+int ledPins[] = {2,3,4,5,6,7};
+void setup() {
+  for(int i=0;i<6;i++) pinMode(ledPins[i], OUTPUT);
+}
+void loop() {
+  int number = random(1,7);
+  for(int i=0;i<6;i++) digitalWrite(ledPins[i], LOW);
+  for(int i=0;i<number;i++) digitalWrite(ledPins[i], HIGH);
+  delay(1000);
+}
+                </pre>
+            </details>
+        </div>
+
+        <div class="project-card">
+            <h3>Water Leakage & Overflow Detection IoT System</h3>
+            <p>
+                Smart water monitoring system using Arduino, sensors, alarms,
+                and mobile alert notifications.
+            </p>
+
+            <details>
+                <summary>📌 View Code</summary>
+                <pre>
+int sensor = A0;
+int buzzer = 8;
+
+void setup() {
+  pinMode(buzzer, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int value = analogRead(sensor);
+  if(value > 500) {
+     digitalWrite(buzzer, HIGH);
+     Serial.println("Water Leakage Detected!");
+  } else {
+     digitalWrite(buzzer, LOW);
+  }
+}
+
+
+                </pre>
+            </details>
+        </div>
+    </section>
+    <!-- CONTACT SECTION -->
+<section id="contact" class="contact">
+    <h2 class="section-title">Contact Me</h2>
+
+    <div class="contact-container">
+
+        <div class="contact-info">
+            <p><strong>Name:</strong> Utsav Rai</p>
+            <p><strong>Email:</strong> <a href="mailto:raiutsav1688@gmail.com">raiutsav1688@gmail.com</a></p>
+            <p><strong>LinkedIn:</strong> 
+                <a href="https://www.linkedin.com/in/utsav-rai-812024217" target="_blank">Click Here</a>
+            </p>
+            <p><strong>GitHub:</strong> 
+                <a href="https://github.com/UTSAV4045" target="_blank">Click Here</a>
+            </p>
+        </div>
+
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+
+    </div>
+</section>
+
+
+</body>
+</html>
